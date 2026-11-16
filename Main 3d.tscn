@@ -342,10 +342,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.37923, 0, -58.3451)
 script = ExtResource("5_6u1p6")
 
 [node name="wheat" parent="StaticBody3D3" unique_id=1476698909 instance=ExtResource("9_5wbvw")]
-transform = Transform3D(0.14, 0, 0, 0, 0.059387922, -0.12677963, 0, 0.12677963, 0.059387922, 0, -1.0851957, 0)
+transform = Transform3D(0.14, 0, 0, 0, 0.059387922, -0.12677963, 0, 0.12677963, 0.059387922, 0, -0.8319081, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D3" unique_id=628662540]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0047683716, -1.1024995, 0.010719299)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0047683716, -0.84921193, 0.010719299)
 shape = SubResource("SphereShape3D_wruv7")
 
 [node name="Control" type="Control" parent="." unique_id=1779313991]
@@ -508,7 +508,7 @@ height = 2.06
 sides = 32
 
 [node name="CSGCylinder3D11" type="CSGCylinder3D" parent="teren" unique_id=223139576]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69.38847, -0.8233957, -57.54271)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69.38847, -0.6016524, -57.54271)
 material_override = SubResource("StandardMaterial3D_srnp5")
 use_collision = true
 collision_layer = 3
