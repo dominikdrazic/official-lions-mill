@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://gwvc8xx3ows6"]
+
+[ext_resource type="Script" uid="uid://3agm80padfm" path="res://123.gd" id="1_qo8cm"]
+[ext_resource type="Texture2D" uid="uid://dcqbvpms5m0ts" path="res://controls.png" id="2_xwvqn"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j1gch"]
+texture = ExtResource("2_xwvqn")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ff64o"]
+bg_color = Color(0.93365467, 0.20783105, 0.18909079, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.5788781, 0.09862151, 0.101274274, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kxvun"]
+bg_color = Color(0.32733902, 0.032234862, 0.02954683, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.5788781, 0.09862151, 0.101274274, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kq3yo"]
+bg_color = Color(0.5168838, 0.074603505, 0.07007042, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.5788781, 0.09862151, 0.101274274, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="Control" type="Control" unique_id=943153613]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qo8cm")
+
+[node name="Panel" type="Panel" parent="." unique_id=168232414]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_j1gch")
+
+[node name="Button5" type="Button" parent="." unique_id=183612397]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 230.0
+offset_top = -136.0
+offset_right = 551.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_ff64o")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kxvun")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kq3yo")
+text = "Back to mill"
+
+[connection signal="pressed" from="Button5" to="." method="_on_button_5_pressed"]

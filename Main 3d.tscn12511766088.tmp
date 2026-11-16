@@ -1,0 +1,180 @@
+[gd_scene format=3 uid="uid://be3j6sqnex52q"]
+
+[ext_resource type="Script" uid="uid://c06rq55jq147g" path="res://character_body_3d.gd" id="1_kqks0"]
+[ext_resource type="Texture2D" uid="uid://crlcxcn223iyy" path="res://3706814-200.png" id="2_0akgw"]
+[ext_resource type="PackedScene" uid="uid://dx1wrmigf6hp6" path="res://lav_tijelo.glb" id="2_g2wno"]
+[ext_resource type="Script" uid="uid://birsccdnts8by" path="res://control.gd" id="2_wruv7"]
+[ext_resource type="Script" uid="uid://bvrb7x2a32dee" path="res://static_body_3d.gd" id="5_6u1p6"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0akgw"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_wruv7"]
+sky_material = SubResource("ProceduralSkyMaterial_0akgw")
+
+[sub_resource type="Environment" id="Environment_g2wno"]
+background_mode = 2
+sky = SubResource("Sky_wruv7")
+glow_enabled = true
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g2wno"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j1gch"]
+texture = ExtResource("2_0akgw")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q50dc"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_j1gch"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_wruv7"]
+radius = 0.4094324
+
+[node name="Node3D" type="Node3D" unique_id=1744518480]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1730823304]
+environment = SubResource("Environment_g2wno")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1208657185]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 7.3217278, 0)
+shadow_enabled = true
+
+[node name="player" type="CharacterBody3D" parent="." unique_id=553121735]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.58745193, 0)
+script = ExtResource("1_kqks0")
+normal_speed = null
+sprint_speed = null
+crouch_speed = null
+normal_fov = null
+sprint_fov = null
+fov_trans_speed = null
+normal_camera_height = null
+crouch_camera_height = null
+camera_trans_speed = null
+Maxammo = null
+Ammo = null
+time = null
+base_time = null
+wheat = null
+base_wheat = null
+slide_duration = null
+slide_friction = null
+slide_speed = null
+bounce = null
+bounce_timer = null
+
+[node name="lav_tijelo" parent="player" unique_id=967178722 instance=ExtResource("2_g2wno")]
+transform = Transform3D(-0.0001652999, 0, 0.09999987, 0, 0.1, 0, -0.09999987, 0, -0.0001652999, 0, -1.1810157, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="player" unique_id=1826003550]
+shape = SubResource("CapsuleShape3D_g2wno")
+
+[node name="neck" type="Node3D" parent="player" unique_id=194831616]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.07723796)
+
+[node name="Camera3D" type="Camera3D" parent="player/neck" unique_id=183299870]
+
+[node name="RayCast3D" type="RayCast3D" parent="player/neck/Camera3D" unique_id=1303699550]
+transform = Transform3D(1.2768655, 0, 0, 0, 0.02181077, 0, 0, 0, 90.59315, 0, -0.012125671, -1.2071772)
+hit_from_inside = true
+
+[node name="Control" type="Control" parent="player" unique_id=1813966852]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_wruv7")
+
+[node name="Panel" type="Panel" parent="player/Control" unique_id=1185696128]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.0
+offset_top = -36.75
+offset_right = 37.0
+offset_bottom = 36.75
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_j1gch")
+
+[node name="Label" type="Label" parent="player/Control" unique_id=1881420165]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -266.0
+offset_top = -73.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_q50dc")
+text = "123"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="player/Control" unique_id=779938557]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -153.5
+offset_right = 153.5
+offset_bottom = 88.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 32
+text = "1234"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="player/Control" unique_id=1671649279]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -65.0
+offset_right = 196.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "12345"
+vertical_alignment = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="player" unique_id=161459391]
+
+[node name="Label" type="Label" parent="player/CanvasLayer" unique_id=851223388]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -94.0
+offset_top = -121.0
+offset_right = 102.0
+offset_bottom = -68.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "press e to interact"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=766844947]
+transform = Transform3D(31.44987, 0, 0, 0, 1.6921059, 0, 0, 0, 33.926796, 2.884159, -1.7076668, 1.5777602)
+use_collision = true
+size = Vector3(1.2894897, 1, 1.1435547)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1184496926]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.384802)
+script = ExtResource("5_6u1p6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=879153646]
+mesh = SubResource("SphereMesh_j1gch")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1222645916]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0.0047693253, -0.017303824, 0.01071763)
+shape = SubResource("SphereShape3D_wruv7")

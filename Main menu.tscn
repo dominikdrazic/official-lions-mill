@@ -1,0 +1,131 @@
+[gd_scene format=3 uid="uid://bh3d2cu2aijop"]
+
+[ext_resource type="Script" uid="uid://bss44ihnhibkm" path="res://main_menu.gd" id="1_7jlr6"]
+[ext_resource type="Texture2D" uid="uid://b15ng4k3y2hdd" path="res://main_menu_lav.png" id="2_enwfr"]
+[ext_resource type="Texture2D" uid="uid://cbxci48qxcud6" path="res://Main_menu_bckg.png" id="2_um2lw"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q50dc"]
+texture = ExtResource("2_um2lw")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j1gch"]
+texture = ExtResource("2_enwfr")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j1gch"]
+bg_color = Color(0.93365467, 0.20783105, 0.18909079, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.5788781, 0.09862151, 0.101274274, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pbtgn"]
+bg_color = Color(0.32733902, 0.032234862, 0.02954683, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.5788781, 0.09862151, 0.101274274, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7jlr6"]
+bg_color = Color(0.5168838, 0.074603505, 0.07007042, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.5788781, 0.09862151, 0.101274274, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="Control" type="Control" unique_id=139872032]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7jlr6")
+
+[node name="Panel2" type="Panel" parent="." unique_id=1042752322]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_q50dc")
+
+[node name="Panel" type="Panel" parent="." unique_id=462493654]
+layout_mode = 0
+offset_left = 566.0
+offset_top = 113.0
+offset_right = 1036.0
+offset_bottom = 771.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_j1gch")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1814118734]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -277.5
+offset_top = -156.0
+offset_right = 21.5
+offset_bottom = 236.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=2012721736]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_j1gch")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pbtgn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7jlr6")
+text = "Start"
+
+[node name="Button3" type="Button" parent="VBoxContainer" unique_id=1444831473]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_j1gch")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pbtgn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7jlr6")
+text = "Credits"
+
+[node name="Button4" type="Button" parent="VBoxContainer" unique_id=1529603091]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_j1gch")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pbtgn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7jlr6")
+text = "Bounce"
+
+[node name="Label" type="Label" parent="." unique_id=2133879409]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -131.0
+offset_right = 131.0
+offset_bottom = 97.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "The Lion's Mill"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button4" to="." method="_on_exit_pressed"]

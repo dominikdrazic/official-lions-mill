@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://cppvaeo5e2fji"]
+
+[ext_resource type="Texture2D" uid="uid://dn6gajsb2qf0p" path="res://istockphoto-1012404208-612x612.jpg" id="1_6j7s7"]
+[ext_resource type="Script" uid="uid://dyiqcuv3vbh8t" path="res://death_from_lava.gd" id="1_lyfh3"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j1gch"]
+texture = ExtResource("1_6j7s7")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fgkq6"]
+bg_color = Color(0.93365467, 0.20783105, 0.18909079, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.5788781, 0.09862151, 0.101274274, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_io1ie"]
+bg_color = Color(0.32733902, 0.032234862, 0.02954683, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.5788781, 0.09862151, 0.101274274, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2y3qv"]
+bg_color = Color(0.5168838, 0.074603505, 0.07007042, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.5788781, 0.09862151, 0.101274274, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="Control" type="Control" unique_id=1384128247]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lyfh3")
+
+[node name="Panel" type="Panel" parent="." unique_id=1036615216]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_j1gch")
+
+[node name="Label" type="Label" parent="." unique_id=1015023643]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -397.0
+offset_top = -34.5
+offset_right = 397.0
+offset_bottom = 34.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "Bro, it's lava obviously it kills you"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button5" type="Button" parent="." unique_id=1350402077]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -160.5
+offset_top = -125.0
+offset_right = 160.5
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_fgkq6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_io1ie")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2y3qv")
+text = "Back to mill"
+
+[connection signal="pressed" from="Button5" to="." method="_on_button_5_pressed"]

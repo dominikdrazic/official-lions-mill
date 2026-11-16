@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://gjohu3k13rat"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_kkybi"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_cu3rl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nlcbn"]
+albedo_color = Color(0.18431373, 0.3019608, 0.90588236, 1)
+metallic_specular = 0.8
+roughness = 0.0
+
+[node name="CylinderArea3D" type="StaticBody3D" unique_id=1912635947]
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=156335759]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.2504809, 0)
+shape = SubResource("CylinderShape3D_kkybi")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1697555412]
+transform = Transform3D(2.25, 0, 0, 0, 2.25, 0, 0, 0, 2.25, 0, 0, 0)
+layers = 17
+mesh = SubResource("CylinderMesh_cu3rl")
+surface_material_override/0 = SubResource("StandardMaterial3D_nlcbn")
+
+[node name="Label" type="Label" parent="." unique_id=321516367]
+offset_top = -32.0
+offset_right = 305.0
+offset_bottom = 80.0
+text = "I FUCKING HATE NIGGERS!!!!!!!!!!"

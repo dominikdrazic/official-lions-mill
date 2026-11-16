@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://s65dw5vop1bn"]
+
+[ext_resource type="Script" uid="uid://d0btv8aqum443" path="res://death_from_broken_heart.gd" id="1_fm6sw"]
+[ext_resource type="Texture2D" uid="uid://dqi40w1ik06au" path="res://images.jpg" id="2_ho200"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j1gch"]
+texture = ExtResource("2_ho200")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tm1j5"]
+bg_color = Color(0.93365467, 0.20783105, 0.18909079, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.5788781, 0.09862151, 0.101274274, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wylot"]
+bg_color = Color(0.32733902, 0.032234862, 0.02954683, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.5788781, 0.09862151, 0.101274274, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2iqar"]
+bg_color = Color(0.5168838, 0.074603505, 0.07007042, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.5788781, 0.09862151, 0.101274274, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="Control" type="Control" unique_id=417913252]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fm6sw")
+
+[node name="Panel" type="Panel" parent="." unique_id=890796148]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_j1gch")
+
+[node name="Label" type="Label" parent="." unique_id=1626838646]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -419.0
+offset_top = -142.5
+offset_right = 419.0
+offset_bottom = 142.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "You could take being 
+away from your only 
+love for so long, 
+you have died from a broken heart"
+horizontal_alignment = 1
+
+[node name="Button6" type="Button" parent="." unique_id=1983546043]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -155.0
+offset_top = -118.0
+offset_right = 155.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_tm1j5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wylot")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2iqar")
+text = "Back to mill"
+
+[connection signal="pressed" from="Button6" to="." method="_on_button_6_pressed"]

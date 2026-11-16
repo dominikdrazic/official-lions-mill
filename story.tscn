@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://bda5dnyb1ewdq"]
+
+[ext_resource type="Script" uid="uid://cwj6lggp32bye" path="res://story.gd" id="1_27gb3"]
+[ext_resource type="VideoStream" uid="uid://bgf71k7pwjsx" path="res://Lore.ogv" id="2_bwkhw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_27gb3"]
+bg_color = Color(0.93365467, 0.20783105, 0.18909079, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.5788781, 0.09862151, 0.101274274, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bwkhw"]
+bg_color = Color(0.32733902, 0.032234862, 0.02954683, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.5788781, 0.09862151, 0.101274274, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4nfae"]
+bg_color = Color(0.5168838, 0.074603505, 0.07007042, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.5788781, 0.09862151, 0.101274274, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="Control" type="Control" unique_id=749591370]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_27gb3")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=381371888]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("2_bwkhw")
+expand = true
+
+[node name="Button" type="Button" parent="." unique_id=1442045791]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -127.0
+offset_top = -67.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_27gb3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bwkhw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4nfae")
+text = "Skip"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

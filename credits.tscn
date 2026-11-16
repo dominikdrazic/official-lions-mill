@@ -1,0 +1,160 @@
+[gd_scene format=3 uid="uid://db3r6gwus28u2"]
+
+[ext_resource type="Script" uid="uid://cx74kg05a47lv" path="res://credits.gd" id="1_nm7lk"]
+[ext_resource type="Texture2D" uid="uid://fxshfiytmddu" path="res://531e5d411243c6505aae.jpeg" id="2_c1t8d"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j1gch"]
+texture = ExtResource("2_c1t8d")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t5rx0"]
+bg_color = Color(0.93365467, 0.20783105, 0.18909079, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.5788781, 0.09862151, 0.101274274, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nm7lk"]
+bg_color = Color(0.32733902, 0.032234862, 0.02954683, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.5788781, 0.09862151, 0.101274274, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c1t8d"]
+bg_color = Color(0.5168838, 0.074603505, 0.07007042, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.5788781, 0.09862151, 0.101274274, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="Control" type="Control" unique_id=421924351]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nm7lk")
+
+[node name="Panel" type="Panel" parent="." unique_id=1257605083]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_j1gch")
+
+[node name="Button" type="Button" parent="." unique_id=1343470056]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -141.5
+offset_top = -134.0
+offset_right = 141.5
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_t5rx0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nm7lk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_c1t8d")
+text = "Back"
+
+[node name="Label" type="Label" parent="." unique_id=2137822028]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -105.5
+offset_right = 105.5
+offset_bottom = 72.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "Credits"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="." unique_id=635334553]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 24.0
+offset_top = -156.0
+offset_right = 309.0
+offset_bottom = -84.0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "Developers:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="." unique_id=359110824]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -385.0
+offset_top = -156.0
+offset_right = -24.0
+offset_bottom = -84.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "Special thanks:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="." unique_id=1273284076]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 255.0
+offset_right = 305.0
+offset_bottom = 328.0
+theme_override_font_sizes/font_size = 26
+text = "Dominik Dražić
+Andrija Ivišić
+Josip Šošo"
+
+[node name="Label5" type="Label" parent="." unique_id=299392297]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -368.0
+offset_top = -73.0
+offset_right = -72.0
+offset_bottom = 41.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 26
+text = "Lav Mlinar
+Lion Miller
+Leo Molitor
+\"Big Mlin\""
+
+[connection signal="pressed" from="Button" to="." method="_on_back_pressed"]
