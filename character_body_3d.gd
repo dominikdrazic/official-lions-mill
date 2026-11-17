@@ -15,8 +15,8 @@ extends CharacterBody3D
 @export var Maxammo = 10
 @export var Ammo = 10
 
-@export var time = 120
-@export var base_time = 120
+@export var time = 60
+@export var base_time = 60
 
 @export var slide_duration = 3.0
 @export var slide_friction = 10.0
@@ -46,6 +46,7 @@ const JUMP_VELOCITY = 4.5
 @onready var collision_shape_3d: CollisionShape3D = $"../StaticBody3D/CollisionShape3D"
 @onready var gel_scene = preload("res://gel.tscn")
 @onready var ray_cast_3d: RayCast3D = $RayCast3D
+@onready var audio_stream_player: AudioStreamPlayer = $"../AudioStreamPlayer"
 
 
 const MOUSE_SENS: float = 0.005
@@ -178,3 +179,5 @@ func _physics_process(delta: float) -> void:
 	
 	if time <= 0:
 		get_tree().change_scene_to_file("res://death from broken heart.tscn")
+	if Input.is_action_pressed('mute'):
+		audio_stream_player.stop()

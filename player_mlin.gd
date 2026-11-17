@@ -43,6 +43,7 @@ const JUMP_VELOCITY = 4.5
 @onready var static_body_3d: StaticBody3D = $"../StaticBody3D"
 @onready var collision_shape_3d: CollisionShape3D = $CollisionShape3D
 @onready var gel_scene = preload("res://gel.tscn")
+@onready var audio_stream_player: AudioStreamPlayer = $"../AudioStreamPlayer"
 
 const MOUSE_SENS: float = 0.005
 
@@ -128,7 +129,10 @@ func _physics_process(delta: float) -> void:
 	else: 
 		crouch_timer = 0
 		animation_player.stop()
-
+	if Input.is_action_just_pressed('mute') and audio_stream_player.playing:
+		audio_stream_player.stop()
+	elif Input.is_action_just_pressed('mute') and not audio_stream_player.playing:
+		audio_stream_player.play()
 			
 	$CanvasLayer/Label.hide()
 
