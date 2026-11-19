@@ -160,11 +160,10 @@ func _physics_process(delta: float) -> void:
 				Global.wheat += wheat
 				get_tree().change_scene_to_file("res://Mlin.tscn")
 	
-	if $RayCast3D.is_colliding():
+	if $RayCast3D.is_colliding() and not Input.is_action_pressed('crouch'):
 		var target2 = $RayCast3D.get_collider()
-		if target2.get_node("Label").text == "a" and not Input.is_action_pressed('crouch'):
+		if target2.get_node("Label").text == "a":
 			velocity.y = 20
-			
 			
 		if target2.get_node("Label").text == "b":
 			get_tree().change_scene_to_file("res://death from lava.tscn")
@@ -182,5 +181,7 @@ func _physics_process(delta: float) -> void:
 	
 	if time <= 0:
 		get_tree().change_scene_to_file("res://death from broken heart.tscn")
-	if Input.is_action_pressed('mute'):
+	if Input.is_action_just_pressed('mute') and audio_stream_player.playing:
 		audio_stream_player.stop()
+	elif Input.is_action_just_pressed('mute') and not audio_stream_player.playing:
+		audio_stream_player.play()
