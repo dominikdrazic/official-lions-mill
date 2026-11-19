@@ -25,6 +25,8 @@ extends CharacterBody3D
 @export var bounce = 0.0
 @export var bounce_timer = 2.0
 
+@export var wheat = 0
+
 var speed := 15.0
 
 var fired = false
@@ -148,13 +150,14 @@ func _physics_process(delta: float) -> void:
 		if target != null and target.has_method('interact'):
 			$CanvasLayer/Label.show()
 			if Input.is_action_just_pressed('interact'):
-				Global.wheat += 10
+				wheat += 10
 				target.queue_free()
 	if $"neck/Camera3D/interact cast".is_colliding():
 		var target = $"neck/Camera3D/interact cast".get_collider()
 		if target != null and target.has_method('interact4'):
 			$CanvasLayer/Label.show()
 			if Input.is_action_just_pressed('interact4'):
+				Global.wheat += wheat
 				get_tree().change_scene_to_file("res://Mlin.tscn")
 	
 	if $RayCast3D.is_colliding() and not Input.is_action_pressed('crouch'):

@@ -8,6 +8,6 @@ extends Control
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void: 
-	label.text =  'Wheat: ' + str(Global.wheat)
+	label.text =  'Wheat: ' + str(player.wheat)
 	label_2.text =  'Bounce gun: ' + str(player.Ammo) + '/' + str(player.Maxammo)
 	label_3.text =  'Return to mill: ' + str(int(player.time))
