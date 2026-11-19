@@ -160,9 +160,9 @@ func _physics_process(delta: float) -> void:
 				Global.wheat += wheat
 				get_tree().change_scene_to_file("res://Mlin.tscn")
 	
-	if $RayCast3D.is_colliding() and not Input.is_action_pressed('crouch'):
+	if $RayCast3D.is_colliding():
 		var target2 = $RayCast3D.get_collider()
-		if target2.get_node("Label").text == "a":
+		if target2.get_node("Label").text == "a" and not Input.is_action_pressed('crouch'):
 			velocity.y = 20
 			
 			
